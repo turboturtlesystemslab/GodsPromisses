@@ -1,0 +1,382 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    min-height: 100vh;
+    background: #17234b;
+}
+
+
+/* =========================================
+   PIXEL ART WORLD
+========================================= */
+
+.promise-world {
+    position: relative;
+    width: 100vw;
+    min-height: 100vh;
+    background-image: url("/img/gods-promises-background.png");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+
+/* =========================================
+   PROMISE CARD
+========================================= */
+
+.promise-card {
+    position: absolute;
+    left: 50%;
+    top: 47%;
+    transform: translate(-50%, -50%);
+    width: 48vw;
+    max-width: 720px;
+    min-height: 380px;
+    padding: 50px 65px;
+    background: #fff0cf;
+    border: 6px solid #302426;
+    box-shadow: 7px 7px 0 #171521;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+
+/* =========================================
+   CROSS
+========================================= */
+
+.cross {
+    margin-bottom: 25px;
+    font-family: Georgia, serif;
+    font-size: 3rem;
+    color: #c78b29;
+    text-shadow: 2px 2px 0 #80591c;
+}
+
+
+/* =========================================
+   PROMISE TEXT
+========================================= */
+
+#promiseText {
+    max-width: 620px;
+    font-family: "Courier New", monospace;
+    font-size: clamp(1.4rem, 2.5vw, 2.2rem);
+    line-height: 1.5;
+    font-weight: bold;
+    font-style: normal;
+    color: #202333;
+}
+
+
+/* =========================================
+   DIVIDER
+========================================= */
+
+.promise-divider {
+    width: 75%;
+    margin: 28px 0 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    color: #c78b29;
+    font-size: 1.4rem;
+}
+
+    .promise-divider span {
+        flex: 1;
+        height: 2px;
+        background: #d4a06b;
+    }
+
+
+/* =========================================
+   REFERENCE
+========================================= */
+
+#promiseReference {
+    font-family: "Courier New", monospace;
+    font-size: clamp(1rem, 1.7vw, 1.35rem);
+    font-weight: bold;
+    color: #29283a;
+}
+
+
+/* =========================================
+   BUTTON
+========================================= */
+
+.promise-button {
+    position: absolute;
+    left: 50%;
+    top: 77%;
+    transform: translateX(-50%);
+    min-width: 360px;
+    padding: 16px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    border: 5px solid #2b2148;
+    border-radius: 8px;
+    background: #7650a6;
+    color: #fff1d0;
+    font-family: "Courier New", monospace;
+    font-size: 1.25rem;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 6px 6px 0 #171329;
+    transition: transform 0.15s ease, background 0.15s ease, box-shadow 0.15s ease;
+}
+
+
+    /* =========================================
+   BUTTON HOVER
+========================================= */
+
+    .promise-button:hover {
+        background: #8b63bd;
+        transform: translateX(-50%) translateY(-4px);
+        box-shadow: 6px 10px 0 #171329;
+    }
+
+
+    /* =========================================
+   BUTTON ACTIVE
+========================================= */
+
+    .promise-button:active {
+        transform: translateX(-50%) translateY(3px);
+        box-shadow: 3px 3px 0 #171329;
+    }
+
+
+/* =========================================
+   BUTTON ICON
+========================================= */
+
+.button-icon {
+    font-size: 1.7rem;
+    transition: transform 0.4s ease;
+}
+
+.promise-button:hover .button-icon {
+    transform: rotate(180deg);
+}
+
+
+/* =========================================
+   PROMISE ANIMATION
+========================================= */
+
+.promise-change {
+    animation: promiseChange 0.6s ease;
+}
+
+@keyframes promiseChange {
+
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+
+    .promise-world {
+        background-position: center center;
+    }
+
+    .promise-card {
+        width: 72vw;
+        min-height: 300px;
+        padding: 35px 25px;
+        top: 45%;
+    }
+
+    .cross {
+        font-size: 2.3rem;
+    }
+
+    #promiseText {
+        font-size: 1.15rem;
+    }
+
+    .promise-divider {
+        width: 85%;
+    }
+
+    #promiseReference {
+        font-size: 0.95rem;
+    }
+
+    .promise-button {
+        top: 76%;
+        min-width: 250px;
+        padding: 14px 20px;
+        font-size: 1rem;
+    }
+}
+.promise-button {
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+    .promise-button:hover {
+        transform: translateY(-2px);
+    }
+
+    .promise-button:active {
+        transform: scale(0.96);
+    }
+
+    .promise-button.loading {
+        opacity: 0.7;
+        cursor: wait;
+    }
+
+        .promise-button.loading .button-icon {
+            animation: rotateButton 0.8s linear infinite;
+        }
+
+@keyframes rotateButton {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.promise-change {
+    animation: promiseChange 0.6s ease;
+}
+
+@keyframes promiseChange {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* ==========================================
+   LANGUAGE SELECTOR
+========================================== */
+
+.language-selector {
+    margin-top: 22px;
+    display: flex;
+    justify-content: center;
+}
+
+    .language-selector select {
+        appearance: none;
+        border: 1px solid rgba(255, 255, 255, 0.35);
+        background: rgba(255, 255, 255, 0.12);
+        color: white;
+        padding: 10px 38px 10px 16px;
+        border-radius: 12px;
+        font-size: 0.95rem;
+        cursor: pointer;
+        backdrop-filter: blur(8px);
+    }
+
+        .language-selector select:focus {
+            outline: none;
+            border-color: rgba(255, 255, 255, 0.7);
+        }
+
+    .language-selector option {
+        color: #222;
+        background: white;
+    }
+
+
+/* ==========================================
+   BUTTON
+========================================== */
+
+.promise-button {
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+    .promise-button:hover {
+        transform: translateY(-2px);
+    }
+
+    .promise-button:active {
+        transform: scale(0.96);
+    }
+
+    .promise-button.loading {
+        opacity: 0.7;
+        cursor: wait;
+    }
+
+        .promise-button.loading .button-icon {
+            animation: rotateButton 0.8s linear infinite;
+        }
+
+
+/* ==========================================
+   PROMISE ANIMATION
+========================================== */
+
+.promise-change {
+    animation: promiseChange 0.6s ease;
+}
+
+@keyframes promiseChange {
+
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+@keyframes rotateButton {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}

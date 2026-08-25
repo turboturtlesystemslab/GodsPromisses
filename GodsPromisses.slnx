@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="GodsPromises.API/GodsPromises.API.csproj" />
+  <Project Path="GodsPromises.Web/GodsPromises.Web.csproj" />
+</Solution>

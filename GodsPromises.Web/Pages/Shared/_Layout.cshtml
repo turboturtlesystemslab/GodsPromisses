@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html lang="de">
+
+<head>
+
+    <meta charset="utf-8" />
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0" />
+
+    <title>@ViewData["Title"] - God's Promises</title>
+
+    <!-- Global website styling -->
+    <link rel="stylesheet"
+          href="~/css/style.css"
+          asp-append-version="true" />
+
+    <!-- Page-specific styling -->
+    @RenderSection("Styles", required: false)
+
+</head>
+
+<body>
+
+    @RenderBody()
+
+    <!-- Global website JavaScript -->
+    <script src="~/js/app.js"
+            asp-append-version="true"></script>
+
+    <!-- Page-specific JavaScript -->
+    @await RenderSectionAsync("Scripts", required: false)
+
+</body>
+
+</html>

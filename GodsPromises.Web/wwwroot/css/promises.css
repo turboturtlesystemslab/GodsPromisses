@@ -1,0 +1,529 @@
+﻿/* ============================================================
+   GOD'S PROMISES
+   Dedicated page styling
+   ============================================================ */
+
+
+/* ============================================================
+   RESET
+   ============================================================ */
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    background: #17234b;
+}
+
+
+/* ============================================================
+   PAGE / PIXEL ART WORLD
+   ============================================================ */
+
+.gp-page {
+    position: relative;
+    width: 100vw;
+    min-height: 100vh;
+    background-image: url("/img/gods-promises-background.png");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px 80px;
+}
+
+
+/* ============================================================
+   LANGUAGE
+   ============================================================ */
+
+.gp-language {
+    position: absolute;
+    top: 22px;
+    right: 28px;
+    z-index: 50;
+}
+
+    .gp-language select {
+        appearance: none;
+        min-width: 145px;
+        padding: 10px 34px 10px 15px;
+        border: 1px solid rgba(255, 225, 170, 0.65);
+        border-radius: 13px;
+        background: rgba(39, 28, 67, 0.88);
+        color: #fff3d4;
+        font-family: Georgia, serif;
+        font-size: 14px;
+        cursor: pointer;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+        backdrop-filter: blur(8px);
+    }
+
+        .gp-language select:hover {
+            border-color: #f4ce7d;
+        }
+
+        .gp-language select:focus {
+            outline: 2px solid rgba(244, 206, 125, 0.55);
+            outline-offset: 3px;
+        }
+
+        .gp-language select option {
+            color: #222;
+            background: #ffffff;
+        }
+
+
+/* ============================================================
+   PROMISE CARD
+   ============================================================ */
+
+/*
+   Diese Karte liegt AUF dem großen Pergament
+   aus dem Hintergrundbild.
+
+   Dadurch entsteht:
+   Hintergrund:
+       großes Pergament
+
+   darüber:
+       kleinere Verheißungs-Karte
+*/
+
+.gp-panel {
+    position: relative;
+    width: min(760px, 86vw);
+    margin-top: 105px;
+    background: linear-gradient( 135deg, rgba(255, 248, 222, 0.98), rgba(248, 231, 193, 0.98) );
+    color: #171426;
+    border: 5px solid #302426;
+    box-shadow: 7px 7px 0 #171521, 0 18px 35px rgba(0, 0, 0, 0.30);
+}
+
+
+    /* ============================================================
+   OUTER DECORATIVE FRAME
+   ============================================================ */
+
+    .gp-panel::before {
+        content: "";
+        position: absolute;
+        inset: 12px;
+        border: 2px solid rgba(156, 105, 55, 0.55);
+        pointer-events: none;
+        z-index: 5;
+    }
+
+
+    .gp-panel::after {
+        content: "";
+        position: absolute;
+        inset: 19px;
+        border: 1px solid rgba(156, 105, 55, 0.35);
+        pointer-events: none;
+        z-index: 5;
+    }
+
+
+/* ============================================================
+   INNER CARD
+   ============================================================ */
+
+.gp-panel-inner {
+    position: relative;
+    z-index: 2;
+    min-height: 535px;
+    padding: 48px 60px 38px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+/* ============================================================
+   CROSS
+   ============================================================ */
+
+.gp-cross {
+    margin-bottom: 15px;
+    font-family: Georgia, serif;
+    font-size: 3rem;
+    line-height: 1;
+    color: #c78b29;
+    text-shadow: 2px 2px 0 #80591c, 0 0 10px rgba(183, 120, 33, 0.25);
+}
+
+
+/* ============================================================
+   THEME
+   ============================================================ */
+
+.gp-theme {
+    min-height: 22px;
+    margin-bottom: 10px;
+    color: #87561f;
+    font-family: Georgia, serif;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+
+/* ============================================================
+   PROMISE TEXT
+   ============================================================ */
+
+.gp-text {
+    max-width: 620px;
+    margin: 0;
+    color: #202333;
+    font-family: "Courier New", monospace;
+    font-size: clamp(22px, 2.4vw, 32px);
+    line-height: 1.5;
+    font-weight: bold;
+    font-style: normal;
+    text-align: center;
+}
+
+
+/* ============================================================
+   DIVIDER
+   ============================================================ */
+
+.gp-divider {
+    width: min(430px, 80%);
+    margin: 24px 0 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+
+    .gp-divider span:not(.gp-diamond) {
+        height: 2px;
+        flex: 1;
+        background: linear-gradient( to right, transparent, rgba(181, 117, 30, 0.65) );
+    }
+
+
+    .gp-divider span:last-child {
+        background: linear-gradient( to left, transparent, rgba(181, 117, 30, 0.65) );
+    }
+
+
+.gp-diamond {
+    color: #c78b29;
+    font-size: 13px;
+}
+
+
+/* ============================================================
+   REFERENCE
+   ============================================================ */
+
+.gp-reference {
+    margin: 0;
+    color: #29283a;
+    font-family: "Courier New", monospace;
+    font-size: clamp(1rem, 1.7vw, 1.3rem);
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+
+/* ============================================================
+   CHOICE AREA
+   ============================================================ */
+
+.gp-choice {
+    width: 100%;
+    margin-top: auto;
+    padding-top: 32px;
+    text-align: center;
+}
+
+
+    /* ============================================================
+   QUESTION
+   ============================================================ */
+
+    .gp-choice h1 {
+        margin: 0 0 18px;
+        color: #4a3424;
+        font-family: Georgia, serif;
+        font-size: clamp(20px, 2.3vw, 27px);
+        font-weight: 700;
+        text-shadow: 1px 1px 0 rgba(255, 249, 226, 0.9);
+    }
+
+
+/* ============================================================
+   THEMES
+   ============================================================ */
+
+.gp-themes {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+
+/* ============================================================
+   THEME BUTTON
+   ============================================================ */
+
+.gp-theme-button {
+    min-height: 56px;
+    padding: 8px 12px;
+    border: 2px solid rgba(246, 210, 137, 0.42);
+    border-radius: 8px;
+    background: #7650a6;
+    color: #fff1cf;
+    font-family: "Courier New", monospace;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 5px 5px 0 #2b2148;
+    transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease, background 0.18s ease;
+}
+
+
+    .gp-theme-button::before {
+        content: "✦";
+        display: block;
+        margin-bottom: 2px;
+        color: #e2b65e;
+        font-size: 10px;
+    }
+
+
+    .gp-theme-button:hover {
+        transform: translateY(-3px);
+        border-color: rgba(246, 210, 137, 0.85);
+        background: #8b63bd;
+        box-shadow: 5px 8px 0 #2b2148;
+    }
+
+
+    .gp-theme-button:active {
+        transform: translateY(2px);
+        box-shadow: 3px 3px 0 #2b2148;
+    }
+
+
+/* ============================================================
+   RANDOM BUTTON
+   ============================================================ */
+
+.gp-random {
+    margin-top: 15px;
+    min-width: 250px;
+    padding: 12px 20px;
+    border: 3px solid #2b2148;
+    border-radius: 8px;
+    background: #7650a6;
+    color: #fff5dc;
+    font-family: "Courier New", monospace;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 5px 5px 0 #171329;
+    transition: transform 0.15s ease, background 0.15s ease, box-shadow 0.15s ease, opacity 0.2s ease;
+}
+
+
+    .gp-random:hover {
+        background: #8b63bd;
+        transform: translateY(-3px);
+        box-shadow: 5px 8px 0 #171329;
+    }
+
+
+    .gp-random:active {
+        transform: translateY(2px);
+        box-shadow: 3px 3px 0 #171329;
+    }
+
+
+    .gp-random:disabled {
+        pointer-events: none;
+    }
+
+
+    .gp-random.loading {
+        opacity: 0.7;
+        cursor: wait;
+    }
+
+
+/* ============================================================
+   RANDOM ICON
+   ============================================================ */
+
+.gp-random-icon {
+    display: inline-block;
+    margin-right: 7px;
+    font-size: 18px;
+}
+
+
+.gp-random.loading .gp-random-icon {
+    animation: rotateButton 0.8s linear infinite;
+}
+
+
+/* ============================================================
+   ERROR
+   ============================================================ */
+
+.gp-error {
+    margin-top: 20px;
+    padding: 10px 18px;
+    border-radius: 10px;
+    background: rgba(83, 28, 45, 0.90);
+    color: #ffe5df;
+    font-family: "Courier New", monospace;
+    font-size: 14px;
+    text-align: center;
+}
+
+
+/* ============================================================
+   PROMISE CHANGE
+   ============================================================ */
+
+.promise-change {
+    animation: promiseChange 0.6s ease;
+}
+
+
+@keyframes promiseChange {
+
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* ============================================================
+   BUTTON ROTATION
+   ============================================================ */
+
+@keyframes rotateButton {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* ============================================================
+   MOBILE
+   ============================================================ */
+
+@media (max-width: 750px) {
+
+    .gp-page {
+        padding: 20px 12px 50px;
+    }
+
+
+    .gp-language {
+        position: relative;
+        top: auto;
+        right: auto;
+        margin-bottom: 5px;
+    }
+
+
+    .gp-panel {
+        width: 94vw;
+        margin-top: 20px;
+    }
+
+
+    .gp-panel-inner {
+        min-height: 560px;
+        padding: 50px 30px 35px;
+    }
+
+
+    .gp-themes {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+/* ============================================================
+   SMALL MOBILE
+   ============================================================ */
+
+@media (max-width: 480px) {
+
+    .gp-panel-inner {
+        padding: 45px 18px 30px;
+    }
+
+
+    .gp-panel::before {
+        inset: 10px;
+    }
+
+
+    .gp-panel::after {
+        inset: 16px;
+    }
+
+
+    .gp-text {
+        font-size: 20px;
+    }
+
+
+    .gp-themes {
+        grid-template-columns: 1fr;
+    }
+
+
+    .gp-random {
+        width: 100%;
+    }
+
+
+    .gp-language select {
+        min-width: 125px;
+    }
+
+
+    .gp-choice h1 {
+        font-size: 21px;
+    }
+}

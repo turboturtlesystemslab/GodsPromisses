@@ -1,0 +1,6 @@
+@GodsPromises.API_HostAddress = http://localhost:5019
+
+GET {{GodsPromises.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

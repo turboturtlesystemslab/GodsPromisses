@@ -1,0 +1,169 @@
+﻿@page
+@model IndexModel
+
+@{
+    ViewData["Title"] = "God's Promises";
+}
+
+@section Styles {
+    <link rel="stylesheet"
+          href="~/css/promises.css"
+          asp-append-version="true" />
+}
+
+
+<main class="gp-page">
+
+    <!-- =====================================================
+         LANGUAGE
+         ===================================================== -->
+
+    <div class="gp-language">
+
+        <select id="languageSelect"
+                aria-label="Language">
+
+            <option value="de">🇩🇪 Deutsch</option>
+            <option value="en">🇬🇧 English</option>
+            <option value="fr">🇫🇷 Français</option>
+            <option value="es">🇪🇸 Español</option>
+            <option value="it">🇮🇹 Italiano</option>
+            <option value="pt">🇵🇹 Português</option>
+            <option value="ru">🇷🇺 Русский</option>
+            <option value="uk">🇺🇦 Українська</option>
+            <option value="ro">🇷🇴 Română</option>
+
+        </select>
+
+    </div>
+
+
+    <!-- =====================================================
+         MAIN PARCHMENT PANEL
+         ===================================================== -->
+
+    <section class="gp-panel">
+
+        <div class="gp-panel-inner">
+
+
+            <!-- =================================================
+                 PROMISE CARD
+                 Die eigentliche Verheißung bekommt ihren
+                 eigenen Rahmen.
+                 ================================================= -->
+
+            <div class="gp-promise-card">
+
+
+                <!-- CROSS -->
+
+                <div class="gp-cross">
+                    ✝
+                </div>
+
+
+                <!-- THEME -->
+
+                <div id="promiseTheme"
+                     class="gp-theme">
+                </div>
+
+
+                <!-- PROMISE TEXT -->
+
+                <blockquote id="promiseText"
+                            class="gp-text">
+
+                    „Eine Verheißung wartet auf dich.“
+
+                </blockquote>
+
+
+                <!-- DIVIDER -->
+
+                <div class="gp-divider">
+
+                    <span></span>
+
+                    <span class="gp-diamond">
+                        ◆
+                    </span>
+
+                    <span></span>
+
+                </div>
+
+
+                <!-- REFERENCE -->
+
+                <p id="promiseReference"
+                   class="gp-reference">
+
+                    Gottes Wort
+
+                </p>
+
+            </div>
+
+
+            <!-- =================================================
+                 QUESTION / THEMES
+                 ================================================= -->
+
+            <div class="gp-choice">
+
+
+                <h1 id="questionText">
+                    Was brauchst du gerade?
+                </h1>
+
+
+                <!-- THEME BUTTONS -->
+
+                <div id="themeButtons"
+                     class="gp-themes">
+                </div>
+
+
+                <!-- RANDOM PROMISE -->
+
+                <button id="promiseButton"
+                        class="gp-random"
+                        type="button">
+
+                    <span class="gp-random-icon">
+                        ↻
+                    </span>
+
+                    <span id="buttonText">
+                        Zufällige Verheißung
+                    </span>
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         ERROR
+         ===================================================== -->
+
+    <div id="errorMessage"
+         class="gp-error"
+         hidden>
+    </div>
+
+</main>
+
+
+@section Scripts {
+
+    <script src="~/js/promises.js"
+            asp-append-version="true"></script>
+
+}

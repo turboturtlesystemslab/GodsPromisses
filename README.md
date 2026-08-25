@@ -69,3 +69,30 @@ GodsPromises
 │
 └── GodsPromises.API
     └── ASP.NET Core Web API
+
+---
+
+## 🔗 External API
+
+God's Promises uses the open-source **Holy Bible API** as an
+external source for multilingual Bible content.
+
+The API provides access to Bible versions, books, verses,
+random verses and text searches across multiple languages.
+
+The project does not claim ownership of the external API
+or its underlying Bible data.
+
+**Holy Bible API**  
+Created by Giovanni Palleschi.
+
+Repository:  
+https://github.com/gpalleschi/holybible_api
+
+The original project is licensed under the
+**GNU General Public License v3.0 (GPL-3.0)**.
+
+Please refer to the original repository and license
+for the terms applicable to the API and its contents.
+
+---
